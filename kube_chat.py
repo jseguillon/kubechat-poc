@@ -49,10 +49,6 @@ class KubeChat:
     my_items = []
 
     def __init__(self, command_classes):
-        for directory in [self.messages_dir, self.work_dir]:
-            if not os.path.exists(directory):
-                os.makedirs(directory)
-
         messages_file = os.path.join(self.messages_dir, "messages.json")
 
         self.command_instances = {}
@@ -122,7 +118,7 @@ class KubeChat:
         intent = list(action.keys())[0]
         values = action[intent]
 
-        # FIXME: remove duplicates already existing that can sometimes appear again 
+        # FIXME: remove duplicates already existing that can sometimes appear again ?
         to_create_items_list=values.get("to_create_list", [])+values.get("to_add_list", [])+values.get("to_create_and_patch_list", [])
         if "to_create_list" in action.keys():
             to_create_items_list+=action['to_create_list']
@@ -405,7 +401,7 @@ if __name__ == "__main__":
     print(
         "Welcome to Kubernetes chat powered by GPT-3 ! Type '/exit' to end the chat."
     )
-    print("Press *** Alt+Enter *** to validate a message, simple enter will only go next line.")
+    print("Press *** ALT+Enter *** to validate a message, simple enter will only go next line.")
     print("/exit to exit")
 
     from prompt_toolkit import PromptSession
