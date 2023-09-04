@@ -1,1 +1,7 @@
+prompt_toolkit
+PyYAML
 openai
+pyperclip
+pygments
+sseclient
+kubernetes
