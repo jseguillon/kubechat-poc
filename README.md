@@ -9,6 +9,8 @@ Use arrows to navigate through messages (history is saved at  ~/.kube-chat.histo
 Use `/exit` to exit
 
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jseguillon/kubechat-poc)
+
 ## Supported instrutions
 
 ```
