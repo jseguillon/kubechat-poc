@@ -14,6 +14,7 @@ import json
 import time
 import random
 import os
+import sys
 from prompt_toolkit import prompt
 from prompt_toolkit.clipboard.pyperclip import PyperclipClipboard
 from prompt_toolkit.completion import WordCompleter, FuzzyWordCompleter
@@ -390,7 +391,11 @@ def get_status_for_pods(pod_list: List[str], namespace="default") -> List[Dict]:
 
 
 if __name__ == "__main__":
-    openai.api_key = os.environ["OPENAI_API_KEY"]
+    try:
+        openai.api_key = os.environ["OPENAI_API_KEY"]
+    except: 
+        print("Please run command `export OPENAI_API_KEY=xxx-your-api-key` before launching Kubechat. Create one here: https://platform.openai.com/account/api-keys.")
+        sys.exit(-1)
     kube_chat = KubeChat(commands)
     kube_chat.my_items = [ ]
     print(
