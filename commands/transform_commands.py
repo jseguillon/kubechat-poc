@@ -138,7 +138,7 @@ You cant directly act on server but only via current_items. You never set 'statu
             print(letter, end="")
             time.sleep(random.random()*10.0/typing_speed)
 
-    def fix_python_object(s):
+    def fix_python_object(self, answer):
         """
         This function tries to fix the Python object string by:
         1. Replacing single quotes with double quotes if they are not enclosed within another pair of quotes.
