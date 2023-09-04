@@ -58,7 +58,6 @@ Now you only reply python array, one change at a time:
         if self.sanitize_code_answer: answer.sanitize_code_answer()
 
         self.add_conversation_message("assistant", answer.gpt_answer)
-        self.save_messages()
         return answer
 
     def send_message(self):
@@ -120,17 +119,6 @@ Now you only reply python array, one change at a time:
 
     def get_conversation(self):
         return self.conversation_messages
-
-    def load_messages(self):
-        try:
-            with open(self.messages_file, "r") as f:
-                self.conversation_messages = json.load(f)
-        except Exception:
-            self.conversation_messages = []
-
-    def save_messages(self):
-        with open(self.messages_file, "w") as f:
-            json.dump(self.conversation_messages, f, indent=2)
 
     def flatten_array(self, item_list):
         target_items = []

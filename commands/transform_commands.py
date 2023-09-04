@@ -113,7 +113,6 @@ You cant directly act on server but only via current_items. You never set 'statu
         answer.sanitize_code_answer()
         # FIXME: remove \n spaces sequences from previos answer ! 
         self.add_conversation_message("assistant", answer.gpt_answer)
-        self.save_messages()
         # FIXME: may not be current_items since I no more inject:/
         try:
             answer.items = ast.literal_eval(answer.gpt_answer)

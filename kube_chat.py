@@ -80,12 +80,7 @@ class KubeChat:
 
         # TODO: keep only two last messages for do_action self.my_items to avoid >4k
 
-        # Save command messages to their respective files when exiting the chat
-        for command_instance in self.command_instances.values():
-            command_instance.save_messages()
-
-
-    # TODO: explain this black magic !
+    # TODO: explain this black magic function !
     def prepare_action(
         self, action, **kwargs
     ):
